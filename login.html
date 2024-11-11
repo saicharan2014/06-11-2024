@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" onsubmit="check(event)">
+    <input type="text" id="name" value="">
+    <input type="text" id="pw" value="">
+    <button type="submit">submit</button>
+</form>
+<script>
+    function check(event){
+        event.preventDefault();
+        let iname=document.querySelector("#name")
+    let ipwd=document.querySelector("#pw")
+
+   if(localStorage.getItem("name")==iname.value && localStorage.getItem("pwd")==ipwd.value){
+  localStorage.setItem("isLogged","true")
+alert("you are logged in")
+location.href="home.html"
+iname.value=""
+ipwd.value=""
+
+   }
+else{
+    localStorage.setItem("isLogged","false")
+location.href="login.html"
+alert("wrong credintials")
+
+}
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>
